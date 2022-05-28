@@ -21,7 +21,7 @@
 <script setup>
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
-
+import md5 from 'js-md5'
 const ruleFormRef = ref()
 const router = useRouter()
 const validatePass = (rule, value, callback) => {
@@ -55,7 +55,11 @@ const submitForm = (formEl) => {
     if (valid) {
       console.log('我')
       console.log('submit!')
-      window.localStorage.setItem('flag', JSON.stringify(ruleForm))
+      const ruleForm2 = {
+        pass: md5(ruleForm.pass),
+        account: ruleForm.account
+      }
+      window.localStorage.setItem('flag', JSON.stringify(ruleForm2))
       router.push('/')
     } else {
       console.log('error submit!')
