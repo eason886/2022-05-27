@@ -77,6 +77,17 @@ const routes = [
       // { path: '/newpage/child4', name: 'newpage4', meta: { title: '大屏可视化4' }, component: () => import(/* webpackChunkName: "about" */ '../views/child1.vue') }
     ]
   },
+  {
+    path: '/newpage5',
+
+    redirect: '/newpage5/child4',
+    component: Home,
+    children: [
+      { path: '/newpage5/child4', name: 'newpage5', meta: { title: 'newpage5' }, component: () => import(/* webpackChunkName: "about" */ '../views/normal5.vue') }
+
+      // { path: '/newpage/child4', name: 'newpage4', meta: { title: '大屏可视化4' }, component: () => import(/* webpackChunkName: "about" */ '../views/child1.vue') }
+    ]
+  },
   // {
   //   path: '/visualization',
   //   name: 'visualization2',
