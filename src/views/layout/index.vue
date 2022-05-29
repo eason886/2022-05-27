@@ -11,7 +11,7 @@
         @open="handleOpen"
         @close="handleClose"
         active-text-color="#ffd04b"
-        background-color="#545c64"
+        background-color="#313642"
         class="el-menu-vertical-demo"
         :default-active="router.path"
         text-color="#fff"

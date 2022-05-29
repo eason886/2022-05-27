@@ -22,6 +22,20 @@
                 <h3 class="small justify-center" text="2xl">{{ item }}</h3>
               </el-carousel-item>
             </el-carousel>
+            <el-table :data="tableData" style="width: 100%" max-height="270px">
+              <el-table-column fixed prop="date" label="Date"></el-table-column>
+              <el-table-column prop="name" label="Name"></el-table-column>
+              <el-table-column prop="state" label="State"></el-table-column>
+              <el-table-column prop="city" label="City"></el-table-column>
+              <el-table-column prop="address" label="Address"></el-table-column>
+              <el-table-column prop="zip" label="Zip"></el-table-column>
+              <el-table-column fixed="right" label="Operations">
+                <template #default>
+                  <el-button text size="small" @click="handleClick">Detail</el-button>
+                  <el-button text size="small">Edit</el-button>
+                </template>
+              </el-table-column>
+            </el-table>
           </el-card>
         </el-col>
         <!-- <el-col :span="16">
@@ -60,6 +74,7 @@
 </template>
 
 <script setup>
+import { reactive } from 'vue'
 const url = 'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg'
 const srcList = [
   'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
@@ -70,23 +85,69 @@ const srcList = [
   'https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg',
   'https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg'
 ]
-const tableData = [
+// 定义表格数据默认为空
+const tableData = reactive([
+  {
+    date: '2016-05-03',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles'
+  },
   {
     date: '2016-05-02',
-    name: 'John Smith',
-    address: 'No.1518,  Jinshajiang Road, Putuo District'
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles'
   },
   {
     date: '2016-05-04',
-    name: 'John Smith',
-    address: 'No.1518,  Jinshajiang Road, Putuo District'
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles'
   },
   {
     date: '2016-05-01',
-    name: 'John Smith',
-    address: 'No.1518,  Jinshajiang Road, Putuo District'
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles'
+  },
+  {
+    date: '2016-05-01',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles'
+  },
+  {
+    date: '2016-05-01',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles'
+  },
+  {
+    date: '2016-05-01',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles'
+  },
+  {
+    date: '2016-05-01',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles'
+  },
+  {
+    date: '2016-05-01',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles'
+  },
+  {
+    date: '2016-05-01',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles'
+  },
+  {
+    date: '2016-05-01',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles'
+  },
+  {
+    date: '2016-05-01',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles'
   }
-]
+])
 </script>
 
 <style lang="scss" scoped>
