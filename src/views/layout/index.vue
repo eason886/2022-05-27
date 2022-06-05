@@ -11,7 +11,7 @@
         @open="handleOpen"
         @close="handleClose"
         active-text-color="#ffd04b"
-        background-color="#545c64"
+        background-color="#313642"
         class="el-menu-vertical-demo"
         :default-active="router.path"
         text-color="#fff"
@@ -72,7 +72,12 @@
           <el-breadcrumb-item>promotion detail</el-breadcrumb-item> -->
           </el-breadcrumb>
         </div>
-        <span @click="reset">退出</span>
+        <div>
+          <span id="fullscreen" @click.stop="screen()" style="margin-right: 20px">
+            <el-icon><FullScreen /></el-icon>
+          </span>
+          <span @click="reset">退出</span>
+        </div>
       </el-header>
       <el-main>
         <router-view></router-view>
@@ -82,7 +87,7 @@
 </template>
 
 <script setup>
-import { Document, Menu as IconMenu, Location, Setting, ArrowRight } from '@element-plus/icons-vue'
+import { Document, Menu as IconMenu, Location, Setting, ArrowRight, FullScreen } from '@element-plus/icons-vue'
 import { useStore } from 'vuex'
 import { useRoute } from 'vue-router'
 const router = useRoute()
@@ -94,7 +99,35 @@ const reset = () => {
   window.localStorage.clear()
   window.location.reload()
 }
-console.log(router)
+let fullscreen = false
+const screen = () => {
+  let element = document.documentElement
+  if (fullscreen) {
+    if (document.exitFullscreen) {
+      document.exitFullscreen()
+    } else if (document.webkitCancelFullScreen) {
+      document.webkitCancelFullScreen()
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen()
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen()
+    }
+  } else {
+    if (element.requestFullscreen) {
+      element.requestFullscreen()
+    } else if (element.webkitRequestFullScreen) {
+      element.webkitRequestFullScreen()
+    } else if (element.mozRequestFullScreen) {
+      element.mozRequestFullScreen()
+    } else if (element.msRequestFullscreen) {
+      // IE11
+      element.msRequestFullscreen()
+    }
+  }
+  fullscreen = !fullscreen
+}
+
+// console.log(router)
 const path = ref([{ path: '/', title: '首页' }])
 watch(
   router,
@@ -153,6 +186,7 @@ const clone = () => {
 // .el-header {
 //   background-color: red;
 // }
+
 .el-main {
   background-color: #f0f2f5;
 }
@@ -185,5 +219,8 @@ const clone = () => {
     margin-top: 4px;
     margin-right: 20px;
   }
+}
+#fullscreen {
+  vertical-align: middle;
 }
 </style>

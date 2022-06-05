@@ -325,7 +325,7 @@ const init5 = () => {
     flex: 0 0 22%;
     height: 100%;
     width: 100%;
-    border-radius: 10px;
+    // border-radius: 10px;
     box-shadow: 0 0 1px 1px #f1f1f1;
   }
 }

@@ -86,7 +86,7 @@ const resetForm = (formEl) => {
     position: absolute;
     width: 400px;
     height: 300px;
-    background-color: #fff;
+    //  background-color: #fff;
     top: 0;
     bottom: 0;
     left: 0;
@@ -94,10 +94,33 @@ const resetForm = (formEl) => {
     margin: auto;
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 }
 .el-button {
   background-color: skyblue;
   border: none;
+}
+::v-deep .el-form {
+  width: 100%;
+  .el-form-item__label {
+    width: 80px !important;
+    color: white;
+  }
+  .el-input__wrapper {
+    background: none;
+  }
+  .el-input__inner {
+    background: transparent !important;
+    -webkit-text-fill-color: #ededed !important;
+
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+
+    background-color: transparent;
+
+    background-image: none;
+
+    transition: background-color 50000s ease-in-out 0s;
+  }
 }
 </style>

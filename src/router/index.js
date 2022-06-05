@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/Home/HomeView.vue'
+// import HomeView from '../views/Home/HomeView.vue'
 import Home from '../views/layout/index'
 import Login from '../views/Login.vue'
 import store from '../store/index'
@@ -73,6 +73,17 @@ const routes = [
     component: Home,
     children: [
       { path: '/newpage4/child4', name: 'newpage4', meta: { title: 'newpage4' }, component: () => import(/* webpackChunkName: "about" */ '../views/normal4.vue') }
+
+      // { path: '/newpage/child4', name: 'newpage4', meta: { title: '大屏可视化4' }, component: () => import(/* webpackChunkName: "about" */ '../views/child1.vue') }
+    ]
+  },
+  {
+    path: '/newpage5',
+
+    redirect: '/newpage5/child4',
+    component: Home,
+    children: [
+      { path: '/newpage5/child4', name: 'newpage5', meta: { title: 'newpage5' }, component: () => import(/* webpackChunkName: "about" */ '../views/normal5.vue') }
 
       // { path: '/newpage/child4', name: 'newpage4', meta: { title: '大屏可视化4' }, component: () => import(/* webpackChunkName: "about" */ '../views/child1.vue') }
     ]
