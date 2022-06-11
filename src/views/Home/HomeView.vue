@@ -196,16 +196,16 @@ const initEcharts = () => {
         // ],
         itemStyle: {
           // 图形上的地图区域
-          normal: {
-            areaColor: '#12225c', //背景色
+          // normal: {
+          //   areaColor: '#12225c', //背景色
 
-            borderColor: '#5e84fd',
-            borderWidth: 2,
-            //  reaColor: '#013C62', //地区颜色
-            shadowColor: '#182f68', //阴影颜色
-            shadowOffsetX: 0, //阴影偏移量
-            shadowOffsetY: 25 //阴影偏移量
-          },
+          //   borderColor: '#5e84fd',
+          //   borderWidth: 2,
+          //   //  reaColor: '#013C62', //地区颜色
+          //   shadowColor: '#182f68', //阴影颜色
+          //   shadowOffsetX: 0, //阴影偏移量
+          //   shadowOffsetY: 25 //阴影偏移量
+          // },
           emphasis: {
             // 高亮时
             areaColor: 'skyblue',
