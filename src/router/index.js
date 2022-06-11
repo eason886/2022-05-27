@@ -129,7 +129,8 @@ router.beforeEach((to, from, next) => {
     //   name: 'Login'
     // }
   } else {
-    next({ path: '/login' })
+    router.push({ path: '/login' })
+    // location.href = ` http://192.168.0.101:8080/#/login`
   }
 
   // next()

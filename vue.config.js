@@ -3,6 +3,10 @@ module.exports = defineConfig({
   transpileDependencies: true,
   devServer: {
     open: true,
-    port: 8082
+    port: 8080
   }
+  // publicPath: '/dist/'
+  // transformToRequire: {
+  //   audio: 'src'
+  // }
 })

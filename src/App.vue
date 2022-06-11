@@ -1,4 +1,5 @@
 <template>
+  <!-- appear使页面一上来就有效果 -->
   <div style="height: 100%">
     <router-view />
   </div>

@@ -41,7 +41,7 @@
       <span>0123456789</span>
     </p> -->
     <!-- <div id="out"> -->
-    <div class="header">
+    <!-- <div class="header">
       <p class="box-item2" style="color: white">
         <span>0123456789</span>
       </p>
@@ -49,7 +49,7 @@
         .
         <div>Notice :I LOVE YOU TOO PROGRAM</div>
       </div>
-    </div>
+    </div> -->
     <!-- <div>I</div>
       <div>LOVE</div>
       <div>YOU</div>
