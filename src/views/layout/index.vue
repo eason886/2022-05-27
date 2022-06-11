@@ -1,7 +1,7 @@
 <template>
   <el-container>
     <el-aside :width="'auto'">
-      <Menus></Menus>
+      <Menus :isCollapse="isCollapse"></Menus>
     </el-aside>
     <el-container>
       <el-header>
@@ -13,11 +13,31 @@
             <el-breadcrumb-item v-for="(item, index) in path" :to="{ path: item.path }" :key="index">{{ item.title }}</el-breadcrumb-item>
           </el-breadcrumb>
         </div>
-        <div>
+        <div class="right">
           <span id="fullscreen" @click.stop="screen()" style="margin-right: 20px">
             <el-icon><FullScreen /></el-icon>
           </span>
-          <span @click="reset">退出</span>
+          <el-dropdown>
+            <span class="el-dropdown-link">
+              <el-avatar
+                id="infinit"
+                :size="35"
+                :src="'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F4k%2Fs%2F02%2F2109242306111155-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1657487316&t=dd5d1034c1a08743e94e524af1e8a6d9'"
+              />
+              <el-icon class="el-icon--right">
+                <arrow-down />
+              </el-icon>
+            </span>
+            <template #dropdown>
+              <el-dropdown-menu>
+                <el-dropdown-item @click="reset">退出</el-dropdown-item>
+                <el-dropdown-item>Action 2</el-dropdown-item>
+                <el-dropdown-item>Action 3</el-dropdown-item>
+                <el-dropdown-item disabled>Action 4</el-dropdown-item>
+                <el-dropdown-item divided>Action 5</el-dropdown-item>
+              </el-dropdown-menu>
+            </template>
+          </el-dropdown>
         </div>
       </el-header>
       <el-main>
@@ -28,7 +48,7 @@
 </template>
 
 <script setup>
-import { Document, Menu as IconMenu, Location, Setting, ArrowRight, FullScreen } from '@element-plus/icons-vue'
+import { Document, Menu as IconMenu, Location, Setting, ArrowRight, FullScreen, ArrowDown } from '@element-plus/icons-vue'
 import { useRoute } from 'vue-router'
 import Menus from './menus'
 const router = useRoute()
@@ -121,11 +141,16 @@ const clone = () => {
   background-color: #f0f2f5;
 }
 
-.el-header {
+::v-deep .el-header {
   .left {
     display: flex;
     align-items: center;
     height: 50px;
+  }
+  .right {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
   }
   display: flex;
   align-items: center;
@@ -149,5 +174,8 @@ const clone = () => {
   &::-webkit-scrollbar {
     width: 0 !important;
   }
+}
+.el-avatar {
+  vertical-align: middle;
 }
 </style>

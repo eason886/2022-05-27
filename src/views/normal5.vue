@@ -4,6 +4,9 @@
       <el-row>
         <el-col :span="24">
           <el-card class="box-card" shadow="hover">
+            <template #header>
+              <div>个人论坛</div>
+            </template>
             <el-image style="width: 100px; height: 100px" :src="url" :preview-src-list="srcList" :initial-index="4" fit="cover" />
           </el-card>
         </el-col>
@@ -22,7 +25,7 @@
                 <h3 class="small justify-center" text="2xl">{{ item }}</h3>
               </el-carousel-item>
             </el-carousel>
-            <el-table :data="tableData" style="width: 100%" max-height="270px">
+            <el-table :data="tableData" style="width: 100%" max-height="220px">
               <el-table-column fixed prop="date" label="Date"></el-table-column>
               <el-table-column prop="name" label="Name"></el-table-column>
               <el-table-column prop="state" label="State"></el-table-column>
@@ -75,15 +78,15 @@
 
 <script setup>
 import { reactive } from 'vue'
-const url = 'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg'
+const url = 'https://pics3.baidu.com/feed/a8ec8a13632762d0e984c674694de6f2533dc6e9.jpeg?token=803c2a52b1d7b2fd0972f93b6af7a656'
 const srcList = [
-  'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
-  'https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg',
-  'https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg',
-  'https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg',
-  'https://fuss10.elemecdn.com/d/e6/c4d93a3805b3ce3f323f7974e6f78jpeg.jpeg',
-  'https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg',
-  'https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg'
+  'https://pics3.baidu.com/feed/a8ec8a13632762d0e984c674694de6f2533dc6e9.jpeg?token=803c2a52b1d7b2fd0972f93b6af7a656',
+  'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Ff5d337bd65747c908695f963b8b8f03ea8b5107c50631-HSJ5DK_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1657528876&t=4ef847397da3999357de118aff0321ac'
+  // 'https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg',
+  // 'https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg',
+  // 'https://fuss10.elemecdn.com/d/e6/c4d93a3805b3ce3f323f7974e6f78jpeg.jpeg',
+  // 'https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg',
+  // 'https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg'
 ]
 // 定义表格数据默认为空
 const tableData = reactive([

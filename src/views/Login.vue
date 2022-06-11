@@ -313,11 +313,11 @@ onMounted(() => {
 
   window.onload = () => {
     const curMusic = document.querySelector('#success')
-    document.body.addEventListener('keyup', () => {
-      console.log('zhing')
-      curMusic.play()
-      console.log('zhing')
-    })
+    // document.body.addEventListener('keyup', () => {
+    //   console.log('zhing')
+    //   curMusic.play()
+    //   console.log('zhing')
+    // })
     document.body.addEventListener('click', () => {
       console.log('zhing')
       curMusic.play()

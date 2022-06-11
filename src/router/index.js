@@ -88,6 +88,17 @@ const routes = [
       // { path: '/newpage/child4', name: 'newpage4', meta: { title: '大屏可视化4' }, component: () => import(/* webpackChunkName: "about" */ '../views/child1.vue') }
     ]
   },
+  {
+    path: '/icon',
+
+    redirect: '/icon/iconList',
+    component: Home,
+    children: [
+      { path: '/icon/iconList', name: 'iconList', meta: { title: 'iconList' }, component: () => import(/* webpackChunkName: "about" */ '../views/icon.vue') }
+
+      // { path: '/newpage/child4', name: 'newpage4', meta: { title: '大屏可视化4' }, component: () => import(/* webpackChunkName: "about" */ '../views/child1.vue') }
+    ]
+  },
   // {
   //   path: '/visualization',
   //   name: 'visualization2',
