@@ -22,7 +22,7 @@
               <el-avatar
                 id="infinit"
                 :size="35"
-                :src="'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F4k%2Fs%2F02%2F2109242306111155-0-lp.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1657487316&t=dd5d1034c1a08743e94e524af1e8a6d9'"
+                :src="'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F201502%2F26%2F20150226130623_5tCsC.thumb.400_0.gif&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1657532814&t=b1b52c95ec7f57aa5c5c5e99f6b37ac2'"
               />
               <el-icon class="el-icon--right">
                 <arrow-down />

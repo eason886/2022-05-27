@@ -1,7 +1,22 @@
 <template>
-  <el-card> </el-card>
+  <el-card>
+    <ul>
+      <li @click="fn">
+        <el-icon><Camera /></el-icon>
+        <!-- <component  :is="'Camera'"></component> -->
+      </li>
+    </ul>
+  </el-card>
 </template>
 
-<script setup></script>
+<script setup>
+const fn = () => {
+  // copyText(` copyText(‘{value}`)
+}
+</script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.component {
+  font-size: 20px;
+}
+</style>

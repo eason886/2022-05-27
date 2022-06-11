@@ -24,4 +24,8 @@ router.beforeEach((to, from, next) => {
 })
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+.el-button--warning {
+  background-color: red;
+}
+</style>
