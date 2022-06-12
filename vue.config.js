@@ -3,7 +3,8 @@ module.exports = defineConfig({
   transpileDependencies: true,
   devServer: {
     open: true,
-    port: 8080
+    port: 8080,
+    host: '127.0.0.1'
   },
   css: {
     // 启用 CSS modules

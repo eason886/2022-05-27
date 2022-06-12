@@ -116,7 +116,7 @@ watch(
 // const store = useStore()
 // console.log(router, 78)
 // const list = store.state.routerList
-const isCollapse = ref(false)
+const isCollapse = ref(true)
 const curw = ref('200px')
 
 const clone = () => {

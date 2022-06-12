@@ -17,7 +17,22 @@ const routes = [
     meta: { title: '首页' },
     component: () => import(/* webpackChunkName: "about" */ '../views/child2.vue')
   },
+  {
+    path: '/mapList',
 
+    redirect: '/mapList/mapOne',
+    component: Home,
+    meta: { title: '地图列表' },
+    children: [
+      { path: '/mapList/mapOne', name: 'mapOne', meta: { title: 'mapOne', query: 'weixing' }, component: () => import(/* webpackChunkName: "about" */ '../views/Map/MapList.vue') },
+      { path: '/mapList/mapTwo', name: 'mapTwo', meta: { title: 'mapTwo', query: '3D' }, component: () => import(/* webpackChunkName: "about" */ '../views/Map/MapList.vue') },
+      { path: '/mapList/mapThree', name: 'mapThree', meta: { title: 'mapThree', query: 'luwang' }, component: () => import(/* webpackChunkName: "about" */ '../views/Map/MapList.vue') },
+      { path: '/mapList/mapFive', name: 'mapFive', meta: { title: 'mapFive', query: 'grey' }, component: () => import(/* webpackChunkName: "about" */ '../views/Map/MapList.vue') },
+      { path: '/mapList/default', name: 'default', meta: { title: 'default', query: '' }, component: () => import(/* webpackChunkName: "about" */ '../views/Map/MapList.vue') }
+
+      // { path: '/newpage/child4', name: 'newpage4', meta: { title: '大屏可视化4' }, component: () => import(/* webpackChunkName: "about" */ '../views/child1.vue') }
+    ]
+  },
   {
     path: '/visualization',
     name: 'visualization',
@@ -99,6 +114,7 @@ const routes = [
       // { path: '/newpage/child4', name: 'newpage4', meta: { title: '大屏可视化4' }, component: () => import(/* webpackChunkName: "about" */ '../views/child1.vue') }
     ]
   },
+
   // {
   //   path: '/visualization',
   //   name: 'visualization2',
@@ -128,22 +144,22 @@ const router = createRouter({
   routes
 })
 store.state.routerList = routes
-router.beforeEach((to, from, next) => {
-  const flag = window.localStorage.getItem('flag')
-  if (flag) {
-    // return true
-    next()
-  } else if (to.path === '/login') {
-    // return true
-    next()
-    // {
-    //   name: 'Login'
-    // }
-  } else {
-    router.push({ path: '/login' })
-    // location.href = ` http://192.168.0.101:8080/#/login`
-  }
+// router.beforeEach((to, from, next) => {
+//   const flag = window.localStorage.getItem('flag')
+//   if (flag) {
+//     // return true
+//     next()
+//   } else if (to.path === '/login') {
+//     // return true
+//     next()
+//     // {
+//     //   name: 'Login'
+//     // }
+//   } else {
+//     router.push({ path: '/login' })
+//     // location.href = ` http://192.168.0.101:8080/#/login`
+//   }
 
-  // next()
-})
+// next()
+// })
 export default router

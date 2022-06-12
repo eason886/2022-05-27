@@ -14,14 +14,20 @@
 
 <body>
   <!-- <audio class="success" autoplay controls preload="auto" src="../src/static//audio/胡歌 - 她的眼睛会下雨.mp3"></audio> -->
-  <script
-    src="https://api.map.baidu.com/api?v=1.0&type=webgl&ak=K9SqQcDOSPZ7mqXB37bTn7Gfkfq43DWH&callback=initialize"></script>
 
   <noscript>
     <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
         Please enable it to continue.</strong>
   </noscript>
   <div id="app"></div>
+
+  <script>
+    window._AMapSecurityConfig = {
+      securityJsCode: 'dc0812b35c16953a72c4e93f1b413b9e',
+    }
+  </script>
+  <script src="https://webapi.amap.com/maps?v=2.0&key=0fe39fc8f71cd02f609d201941a07ebc"></script>
+
   <!-- built files will be auto injected -->
 </body>
 
