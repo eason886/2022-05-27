@@ -1,12 +1,12 @@
 <template>
   <div class="big">
-    <el-button type="primary" @click="goPreview">default docx</el-button>
-    <el-button ref="wordView" type="primary" @click="goPreview1">预览文件doc</el-button>
-    <el-button ref="2" type="primary" @click="goPreview2">预览文件pdf</el-button>
+    <el-button size="small" type="primary" @click="goPreview">default docx</el-button>
+    <el-button ref="wordView" size="small" type="primary" @click="goPreview1">预览文件doc</el-button>
+    <el-button size="small" type="primary" @click="goPreview2">预览文件pdf</el-button>
     <div ref="file" style="width：100%；height：100%"></div>
 
-    <!--doc-->
-    <!-- <iframe style="width: 100%; height: 100%" :src="'https://view.officeapps.live.com/op/view.aspx?src=http://192.168.0.101:8080/预览do.doc' + fileUrl" frameborder="0"></iframe> -->
+    <!--doc 配合外网地址即可访问doc预览-->
+    <!-- <iframe style="width: 100%; height: 100%" :src="'https://view.officeapps.live.com/op/view.aspx?src=https://127.0.0.1:8080//预览do.doc'" frameborder="0"></iframe> -->
   </div>
 </template>
 
